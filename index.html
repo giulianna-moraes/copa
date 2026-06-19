@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MundoCopa Hub | O Guia do Torcedor</title>
+    <style>
+        :root {
+            --primary: #0a5c36;
+            --secondary: #eeb111;
+            --dark: #111;
+            --light: #f4f4f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #063b22);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.1rem; color: #ccc; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--secondary);
+            padding-left: 10px;
+        }
+
+        /* Tabela Comparativa */
+        .table-responsive { overflow-x: auto; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th { background-color: var(--primary); color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* Mini Simulador */
+        .simulator-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        .group-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 6px;
+            background: #fafafa;
+        }
+        .group-card select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        /* Quiz */
+        .quiz-option {
+            display: block;
+            background: #f0f0f0;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .quiz-option:hover { background: #e0e0e0; }
+        .correct { background: #c8e6c9 !important; color: #256029; font-weight: bold; }
+        .wrong { background: #ffcdd2 !important; color: #c62828; }
+        
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        button:hover { background: #074327; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🏆 MundoCopa Hub</h1>
+        <p>Celebrando 96 anos de história, emoção e futebol!</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SEÇÃO 1: HISTÓRIA -->
+        <section id="historia">
+            <h2>⏳ A Evolução Histórica (1930 vs. 2026)</h2>
+            <p>De um torneio de nicho no Uruguai para o maior evento esportivo do planeta. Veja como as coisas mudaram:</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Critério</th>
+                            <th>🇺🇾 Uruguai 1930 (A Primeira)</th>
+                            <th>🇨🇦🇲🇽🇺🇸 2026 (A Maior)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Total de Seleções</strong></td>
+                            <td>13 países</td>
+                            <td>48 países</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Número de Jogos</strong></td>
+                            <td>18 partidas</td>
+                            <td>104 partidas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Países-Sede</strong></td>
+                            <td>1 (Uruguai)</td>
+                            <td>3 (Canadá, México e EUA)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fase de Mata-Mata</strong></td>
+                            <td>Direto nas Semifinais</td>
+                            <td>Começa nos 16 avos (32 seleções)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: SIMULADOR DE BOLSO -->
+        <section id="simulador">
+            <h2>🔮 Mini-Simulador: Quem Avança?</h2>
+            <p>Com o novo formato de 48 seleções, os grupos mudaram. Faça sua previsão rápida para os primeiros colocados de grupos hipotéticos clássicos:</p>
+            
+            <div class="simulator-box">
+                <div class="group-card">
+                    <h4>Grupo A</h4>
+                    <label>1º Lugar:</label>
+                    <select>
+                        <option>Brasil</option>
+                        <option>Alemanha</option>
+                        <option>Marrocos</option>
+                        <option>Japão</option>
+                    </select>
+                </div>
+                <div class="group-card">
+                    <h4>Grupo B</h4>
+                    <label>1º Lugar:</label>
+                    <select>
+                        <option>Argentina</option>
+                        <option>França</option>
+                        <option>Coreia do Sul</option>
+                        <option>Egito</option>
+                    </select>
+                </div>
+                <div class="group-card">
+                    <h4>Grupo C</h4>
+                    <label>1º Lugar:</label>
+                    <select>
+                        <option>Espanha</option>
+                        <option>Inglaterra</option>
+                        <option>Uruguai</option>
+                        <option>Nigéria</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="alert('Previsão salva com sucesso! Compartilhe com seus amigos.')">Salvar Palpites</button>
+        </section>
+
+        <!-- SEÇÃO 3: QUIZ -->
+        <section id="quiz">
+            <h2>🧠 Desafio Almanaque: Você é um Mestre das Copas?</h2>
+            <div id="quiz-container">
+                <p id="question"><strong>Pergunta:</strong> Quem é o maior artilheiro da história de todas as Copas do Mundo?</p>
+                <div id="options">
+                    <span class="quiz-option" onclick="checkAnswer(this, false)">Pelé (Brasil)</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, true)">Miroslav Klose (Alemanha)</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, false)">Ronaldo Fenômeno (Brasil)</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, false)">Lionel Messi (Argentina)</span>
+                </div>
+                <p id="quiz-feedback" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>MundoCopa Hub © 2026 - Criado com Inteligência Artificial para torcedores apaixonados.</p>
+    </footer>
+
+    <script>
+        function checkAnswer(element, isCorrect) {
+            // Desabilita cliques repetidos
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+
+            if (isCorrect) {
+                element.classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = "🎉 Correto! Miroslav Klose tem 16 gols no total.";
+                document.getElementById('quiz-feedback').style.color = "#256029";
+            } else {
+                element.classList.add('wrong');
+                document.getElementById('quiz-feedback').innerHTML = "❌ Errado! Dica: O recordista é um atacante alemão com 16 gols.";
+                document.getElementById('quiz-feedback').style.color = "#c62828";
+                
+                // Mostra a alternativa correta
+                options[1].classList.add('correct');
+            }
+        }
+    </script>
+</body>
+</html>
